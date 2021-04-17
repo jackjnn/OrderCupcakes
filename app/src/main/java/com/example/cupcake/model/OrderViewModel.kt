@@ -6,19 +6,21 @@ import androidx.lifecycle.ViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class OrderViewModel : ViewModel() {
-    private val _quantity = MutableLiveData<Int>(0)
+    private val _quantity = MutableLiveData<Int>()
     val quantity: LiveData<Int> = _quantity
     val dateOptions = getPickupOptions()
 
-    private val _flavor = MutableLiveData<String>("")
+    private val _flavor = MutableLiveData<String>()
     val flavor: LiveData<String> = _flavor
 
-    private val _date = MutableLiveData<String>("")
+    private val _date = MutableLiveData<String>()
     val date: LiveData<String> = _date
 
-    private val _price = MutableLiveData<Double>(0.0)
+    private val _price = MutableLiveData<Double>()
     val price: LiveData<Double> = _price
+
 
     fun setQuantity(numberCupcakes: Int) {
         _quantity.value = numberCupcakes
@@ -46,5 +48,16 @@ class OrderViewModel : ViewModel() {
             calendar.add(Calendar.DATE, 1)
         }
         return options
+    }
+
+    fun resetOrder() {
+        _quantity.value = 0
+        _flavor.value = ""
+        _date.value = dateOptions[0]
+        _price.value = 0.0
+    }
+
+    init {
+        resetOrder()
     }
 }
