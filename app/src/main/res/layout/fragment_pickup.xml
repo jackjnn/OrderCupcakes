@@ -19,6 +19,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".PickupFragment">
+
     <data>
         <variable
             name="viewModel"
@@ -92,6 +93,7 @@
 
             <TextView
                 android:id="@+id/subtotal"
+                android:text="@{@string/subtotal_price(viewModel.price)}"
                 style="@style/Widget.Cupcake.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
