@@ -26,7 +26,7 @@ import com.example.cupcake.databinding.FragmentPickupBinding
 import com.example.cupcake.model.OrderViewModel
 
 /**
- * [PickupFragment] allows the user to choose a pickup date for the cupcake order.
+ * [PickupFragment] allows the user to choose a pickup date for the cupcake order
  */
 class PickupFragment : Fragment() {
 
